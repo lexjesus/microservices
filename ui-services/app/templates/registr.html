@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{{super()}}
+{%for msg in get_flashed_messages() %}
+<div>{{msg}}</div>
+{% endfor%}
+<h1> Registration </h1>
+<form action="/ui-services/registr" method="post">
+<p><label>Log in: </label><input type="text" name="login" value ="" requied /></p>
+<p><label>Password: </label><input type="password" name="password" value ="" requied /></p>
+<p><label>Dick size: </label><input type="number" name="dickSize" value ="" requied /></p>
+<p><input type="submit" value ="Registration" requied /></p>
+</form>
+{% endblock %}

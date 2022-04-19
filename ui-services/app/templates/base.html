@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Cock shop</title>
+    <style>
+        * {
+            color: #ffcbdb;
+            width: 400px;
+            padding: 1px;
+            margin: auto;
+            /* background: #F19CBB; */
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        body {
+            background-image: url(https://st.depositphotos.com/2485347/4758/v/450/depositphotos_47586151-stock-illustration-seamless-sex-shop-pattern.jpg);
+        }
+        
+        ul {
+            margin: 0;
+            padding: 30px;
+        }
+        
+        ul li {
+            display: block;
+            margin-right: 5px;
+            margin-bottom: 10px;
+            border: 4px solid #FFCBDB;
+            padding: 8px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        
+        a {
+            color: #FAF0E6;
+            font-size: 19px;
+        }
+        
+        a:hover {
+            color: #DDBEC3;
+            font-size: 21px;
+        }
+        
+        input {
+            margin: 15px;
+            background-color: #d38ba4;
+            border-radius: 18px;
+            color: black;
+        }
+        
+        input[type=submit] :hover {
+            background-color: #d8adba;
+            cursor: pointer;
+        }
+        
+        input[type=submit] {
+            color: black;
+            width: 50%
+        }
+    </style>
+</head>
+<body>
+<ul>
+{% for m in menu -%}
+   <li><a href="{{m.url}}">{{m.name}}</a></li> 
+   {% endfor -%}
+</ul>
+
+{% block content -%}
+{% endblock -%}
+</body>

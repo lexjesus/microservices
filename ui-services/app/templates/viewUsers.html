@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+{{super()}}
+{% for users in viewusers -%}
+   <p><b>Log in: </b> {{users.login}} <b>Password: </b> {{users.password}} <b>Dick size: </b> {{users.dickSize}}</p>
+{% endfor -%}
+<p><b>{{error}}</b></p>
+{% endblock %}

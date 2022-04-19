@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+{{super()}}
+<h1> Log in </h1>
+{%for msg in get_flashed_messages() %}
+<div>{{msg}}</div>
+{% endfor %}
+<form action="/ui-services/login" method="post" >
+<p><label>Log in: </label><input type="text" name="login" value ="" requied /></p>
+<p><label>Password: </label><input type="password" name="password" value ="" requied /></p>
+<p><input type="submit" value ="Send" requied /></p>
+</form>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+{{super()}}
+{% if isAdmin %}
+<h1>Add item</h1>
+{%for msg in get_flashed_messages() %}
+<div>{{msg}}</div>
+{% endfor %}
+
+<form action="/ui-services/createproduct" method="post" >
+<p><label>Item name: </label><input type="text" name="name" value ="" requied /></p>
+<p><label>Price</label><input type="min" name="price" value ="" requied /></p>
+<p><input type="submit" value ="Send" requied /></p>
+</form>
+
+<h1>Item delete</h1>
+{%for msg in get_flashed_messages() %}
+<div>{{msg}}</div>
+{% endfor %}
+<form action="/ui-services/deleteproduct" method="post" >
+<p><label>Item name</label><input type="text" name="name" value ="" requied /></p>
+<p><input type="submit" value ="Send" requied /></p>
+</form>
+
+{% endif %}
+<h1>Items list</h1>
+{% for product in viewproduct -%}
+   <p><b>Item name :</b>{{product.name}} <b>Price :</b> {{product.price}} </p>
+
+   {% if isAdmin == False %}
+   <p><input  type="button" value ="Buy" onclick="alert('You buy a toy!')"></p>
+      {% endif %}
+
+{% endfor -%}
+{% endblock %}
+
